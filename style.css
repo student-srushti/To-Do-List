@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins','sans-serif';
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    /* margin: 100px auto 20px; */
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #ff5945;
+    color: #ffff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(https://static.thenounproject.com/png/1126678-200.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8fIyhCRUocICUaHiTJyssNExvGx8hPUlYRFx4PFRsWGyFLTlITGB78/PwACxTU1dbp6erv7/BpbG+dn6Hz9PRWWFzS09Tj4+QzNju3uLpcX2La29xfYWR6fX+AgoQ2OT4kKS+8vb8qLjM+QkaksSzpAAAE0UlEQVR4nO3c7ZrhQBAF4MYwSIwIYezYT+7/GlcMuz6S6k5UtSpzzt8d++R9uirV6HDzXfeZs5u7NOk9c5LUDV86z5yXIYTWA6H9QGg/ENoPhPYDof1AaD8Q2s/XFSYDi0nChcmi/2ov/UUFpUY46juL6Y8ghFB7IIRQfyCEUH8ghFB/IIRQfyCEUH8ghFB/IIRQfyCEUH8ghFB/IIRQfyCEUH8ghFB/IIRQfyCE8EF5/xP8pzaFeTr+Fvq3JoWz7rg3CCVaFM6G4/1FvgQSDQpn6bi8nF4njGhPmH8C98QkiGhOODsB99cZdLuxJjz04ClBhWpMmKfjiysNINoSXgH3qzjyEk0JL0r0SPTebiwJZ8sbYEChGhIW1yV6vNoevUe1I8zTQRVwX6j0Bs6MsLJEj8QeRbQizOuBnc70o6h/pRHhzZg4z2A4I15qQ5gva3qwzHiYU681Icw/qBVcUitoQ1hQK0iXqDMhzIftS9RZEJJ30bGnRJ0B4b1A9cKCLlE/ULuQ7sHU14NldAvzj3tXULmQHBOBQNXC++bgKYqFnq1aIFCxkNyqhQP1CukeTIOBaoXkmBh4t2pnUSrkGBPH6BR6evC9yf+lUsgzJo7RKKTHRNBW7SwKhYw9WEafsCB7MG3Ug2VkhDPi0z1P2ObgKSLCbPvjrfGVfIYs0VELoIhws02mP9sR8+98Y+IYAeFmnXQ67YjsJeokhNn28Btw0xaF6hkTrYD8wtX6+CN3zYn5d9YxcQy3cLP99yt+TQuVHhOterAMszDbnv1MYTOiRA/yC1fbi99hbFKoIj3ILrwCNllFTw+2LVFmYXYNDCcW5F60+VZNRnizguFEqR7kFfargGG9SJbo5D4gn3D1uxIYsooFuVW7q0QZhZUlGkZ8k+tBRmFRd9jlQCQLlX7De2eJ8gnd5lftGtKr6OnBe1eQsQ83dX1IEwtyDjIAGe+lm3ULouSYYBd6CrWyF/nf0YsKm69iMZcuUWbh+VunEOKbeA+yC5sVqmcvylKi7MImRPIuyjEmZIThhSq7VRMUht5uPFs1rhKVEIYVKl2iXUagxOelGbmKByI5Jhh7UEjo38CRKzjiBcp8b+HpRXKzPWItUSmhy6henFB+5hIVE9JDo1f/T9wlKies+twtIOMuO1DuO2ByaNSEvQdFhXQvVgP5S1RUSA+NivDfZKSF9NC4iUQPSgvp3c1VeLdqZ5E9bRJOlOnBMsLnabLAXpwIlaiTPzEUtoqCQPkzUSFESWCEU1/+3c2ku2FWnSfCuTYfUXQF45zcowt1shMFxjmbSBFHsisY6/Rl/dCQ7cEykc6X1vWidIm6eCdoV5WFKnyTOSTaGeGqr8HlS9TFPAW96lwTJ7sIwJjnvK/fTEXowTIxT7JfDo1IwLhn9c+HRpwSdbGfRvg/NKIBYz9vcSrUWCXq4j9R8kmMt4IPeGam/AQuJvABTwVt1tN4Jeoe8txTtoy4go95sqvtE0Ptou/ZNe5ACKH+QAih/kAIof5ACKH+QAih/kAIof5ACKH+QAih/kAIof5ACKH+QAih/kAIof40ECaL/qu99BcVlBphJxlYTNXp6zrh8wRC+4HQfiC0HwjtB0L7gdB+ILQfCO3nSwjTpPfMSVI333WfObv5XzIvu+uabrWVAAAAAElFTkSuQmCC);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius:50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
